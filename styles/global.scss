@@ -1,0 +1,89 @@
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  @include default-margin-padding;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  @include section-size;
+}
+
+.pin-pad-section {
+  @include flex-center;
+  background-color: #343843;
+  .pin-pad-box {
+    @include dark-box-shadow;
+    @include pin-pad-box-size;
+    @include flex-center;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    background-color: #2f333d;
+    h5 {
+      color: #4a4e59;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .passcode-inputs-box {
+      @include flex-center;
+      margin: 3rem 0;
+      .passcode-input {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        background-color: transparent;
+        margin-right: 2rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      #passcode-input-1 {
+        border: 1px solid #4f86b5;
+      }
+      #passcode-input-2 {
+        border: 1px solid #597cb3;
+      }
+      #passcode-input-3 {
+        border: 1px solid #6e6cac;
+      }
+      #passcode-input-4 {
+        border: 1px solid #805fa8;
+      }
+    }
+    .btns-box {
+      @include flex-center;
+      flex-direction: column;
+      .row {
+        @include flex-center;
+        width: 100%;
+        margin-bottom: 1rem;
+        button {
+          @include flex-center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          margin-right: 3rem;
+          color: #868990;
+
+          font-size: 30px;
+          img {
+            height: 25px;
+            width: 25px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          &:hover {
+            background-color: #373b44;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

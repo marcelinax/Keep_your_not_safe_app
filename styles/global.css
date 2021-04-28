@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+.pin-pad-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #343843;
+}
+
+.pin-pad-section .pin-pad-box {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4rem 2rem;
+  background-color: #2f333d;
+}
+
+.pin-pad-section .pin-pad-box h5 {
+  color: #4a4e59;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 0;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box .passcode-input {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  background-color: transparent;
+  margin-right: 2rem;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box .passcode-input:last-child {
+  margin-right: 0;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box #passcode-input-1 {
+  border: 1px solid #4f86b5;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box #passcode-input-2 {
+  border: 1px solid #597cb3;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box #passcode-input-3 {
+  border: 1px solid #6e6cac;
+}
+
+.pin-pad-section .pin-pad-box .passcode-inputs-box #passcode-input-4 {
+  border: 1px solid #805fa8;
+}
+
+.pin-pad-section .pin-pad-box .btns-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin-right: 3rem;
+  color: #868990;
+  font-size: 30px;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row button img {
+  height: 25px;
+  width: 25px;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row button:last-child {
+  margin-right: 0;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row button:hover {
+  background-color: #373b44;
+}
+
+.pin-pad-section .pin-pad-box .btns-box .row:last-child {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=global.css.map */
