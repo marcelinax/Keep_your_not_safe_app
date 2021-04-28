@@ -45,14 +45,13 @@
 
 // new Note();
 let currentInputIndex = 1;
+const pinInputs = document.querySelectorAll(".passcode-input");
 
 const savePinInLocalStorage = () => {
   localStorage.setItem("pin", JSON.stringify("1111"));
 };
 
 const enterPin = (btnNumber) => {
-  const pinInputs = document.querySelectorAll(".passcode-input");
-
   pinInputs.forEach((input) => {
     if (input.id == `passcode-input-${currentInputIndex}`) {
       input.value = btnNumber;
@@ -89,6 +88,19 @@ const initCheckPin = () => {
     checkPin();
   });
 };
+
+const clearPin = () => {
+  pinInputs.forEach((input) => {
+    input.value = "";
+    currentInputIndex = 1;
+  });
+};
+const initClearPin = () => {
+  document.querySelector(".clear-btn").addEventListener("click", () => {
+    clearPin();
+  });
+};
 savePinInLocalStorage();
 initEnterPin();
 initCheckPin();
+initClearPin();
