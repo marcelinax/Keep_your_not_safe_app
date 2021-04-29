@@ -2,6 +2,7 @@
 
 let currentInputIndex = 1;
 const pinInputs = document.querySelectorAll(".passcode-input");
+const createNoteBox = document.querySelector(".create-note-box");
 
 const savePinInLocalStorage = (passcode) => {
   localStorage.setItem("pin", JSON.stringify(passcode));
@@ -118,8 +119,8 @@ const renderNote = () => {
 };
 const hideCreateNoteBox = () => {
   if (JSON.parse(localStorage.getItem("note")))
-    document.querySelector(".create-note-box").style.display = "none";
-  else document.querySelector(".create-note-box").style.display = "flex";
+    createNoteBox.style.display = "none";
+  else createNoteBox.style.display = "flex";
 };
 const showNoteSettings = () => {
   document.querySelector(".settings-btn").addEventListener("click", () => {
@@ -151,6 +152,17 @@ const initChangePasscode = () => {
     });
 };
 
+const deleteNote = () => {
+  localStorage.removeItem("note");
+  hideCreateNoteBox();
+  location.reload();
+};
+const initDeleteNote = () => {
+  document.querySelector(".delete-btn").addEventListener("click", () => {
+    deleteNote();
+  });
+};
+
 if (!initChangePasscode) savePinInLocalStorage("1111");
 initEnterPin();
 initCheckPin();
@@ -161,3 +173,4 @@ showNoteSettings();
 hideCreateNoteBox();
 showChangePasscodeBox();
 initChangePasscode();
+initDeleteNote();
