@@ -146,7 +146,16 @@ const showChangePasscodeBox = () => {
 };
 const changePasscode = () => {
   const newPasscode = document.getElementById("change-passcode-input").value;
-  savePinInLocalStorage(newPasscode);
+  const message = document.getElementById("create-note-box-title");
+  const reg = new RegExp("^[0-9]$");
+
+  reg.test(newPasscode)
+    ? savePinInLocalStorage(newPasscode)
+    : (message.innerHTML = "Passcode can only contains numbers!");
+
+  newPasscode.length < 4
+    ? (message.innerHTML = "Passcode is too short!")
+    : savePinInLocalStorage(newPasscode);
 };
 
 const initChangePasscode = () => {
