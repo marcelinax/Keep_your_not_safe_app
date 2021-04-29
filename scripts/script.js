@@ -42,8 +42,14 @@ const checkPin = () => {
   const savedPin = JSON.parse(localStorage.getItem("pin"));
   const enteredPin = `${firstInput}${secondInput}${thirdInput}${fourthInput}`;
   if (savedPin === enteredPin) {
-    document.querySelector(".pin-pad-section").style.display = "none";
-    document.querySelector(".note-section").style.display = "flex";
+    // document.querySelector(".pin-pad-section").style.display = "none";
+    document
+      .querySelector(".pin-pad-section")
+      .classList.toggle("pin-pad-section--disactive");
+    // document.querySelector(".note-section").style.display = "flex";
+    document
+      .querySelector(".note-section")
+      .classList.toggle("note-section--active");
   } else {
     document.getElementById("pin-pad-title").innerHTML =
       "Wrong passcode! Try again!";
@@ -91,9 +97,10 @@ const initCreateNote = () => {
 
 const renderNote = () => {
   const note = JSON.parse(localStorage.getItem("note"));
-  const noteBox = document.createElement("div");
-  noteBox.classList.add("note-box");
-  let content = `
+  if (note) {
+    const noteBox = document.createElement("div");
+    noteBox.classList.add("note-box");
+    let content = `
     <div class="top-menu">
 
           <button class="settings-btn"></button>
@@ -114,8 +121,9 @@ const renderNote = () => {
           </button>
         </div>
   `;
-  noteBox.innerHTML = content;
-  document.querySelector(".note-section").appendChild(noteBox);
+    noteBox.innerHTML = content;
+    document.querySelector(".note-section").appendChild(noteBox);
+  } else return;
 };
 const hideCreateNoteBox = () => {
   if (JSON.parse(localStorage.getItem("note")))
@@ -168,6 +176,7 @@ initEnterPin();
 initCheckPin();
 initClearPin();
 initCreateNote();
+
 renderNote();
 showNoteSettings();
 hideCreateNoteBox();
