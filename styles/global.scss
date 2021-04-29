@@ -92,6 +92,7 @@
     padding: 3rem;
     textarea {
       @include default-textarea;
+      @include scroll;
       margin: 2rem 0;
       width: 100%;
       height: calc(100% - 8rem);
@@ -146,10 +147,13 @@
       height: 100%;
       textarea {
         @include default-textarea;
+        @include scroll;
         border: none;
         width: 100%;
+        height: 100%;
         background-color: transparent;
         font-size: 12px;
+        overflow-y: auto;
       }
     }
     .bottom-menu {
@@ -159,6 +163,7 @@
         @include default-box-shadow;
         @include flex-center;
         justify-content: space-between;
+        background-color: white;
         width: calc(100% - 4rem);
         height: 80px;
         position: absolute;
@@ -166,6 +171,7 @@
         left: 0;
         padding: 0 2rem;
         transition: $default-transition;
+        z-index: 1000;
       }
       &-btn {
         @include image-bg;

@@ -42,11 +42,9 @@ const checkPin = () => {
   const savedPin = JSON.parse(localStorage.getItem("pin"));
   const enteredPin = `${firstInput}${secondInput}${thirdInput}${fourthInput}`;
   if (savedPin === enteredPin) {
-    // document.querySelector(".pin-pad-section").style.display = "none";
     document
       .querySelector(".pin-pad-section")
       .classList.toggle("pin-pad-section--disactive");
-    // document.querySelector(".note-section").style.display = "flex";
     document
       .querySelector(".note-section")
       .classList.toggle("note-section--active");
@@ -102,24 +100,23 @@ const renderNote = () => {
     noteBox.classList.add("note-box");
     let content = `
     <div class="top-menu">
-
-          <button class="settings-btn"></button>
-           <h6>Note settings</h6>
-        </div>
-        <div class="body-note">
-          <textarea id="body-note">${note.content}</textarea>
-        </div>
-        <div class="bottom-menu">
-          <button class="bottom-menu-btn delete-btn">
-              <img src='../assets/bxs-trash-alt.svg'>          
-          </button>
-          <button class="bottom-menu-btn font-btn">
-          <img src='../assets/bx-font-size.svg'>    
-          </button>
-          <button class="bottom-menu-btn change-mode-btn">
-          <img src='../assets/bxs-moon.svg'>
-          </button>
-        </div>
+      <button class="settings-btn"></button>
+      <h6>Note settings</h6>
+    </div>
+    <div class="body-note">
+      <textarea id="body-note">${note.content}</textarea>
+    </div>
+    <div class="bottom-menu">
+      <button class="bottom-menu-btn delete-btn">
+        <img src='../assets/bxs-trash-alt.svg'>          
+      </button>
+      <button class="bottom-menu-btn font-btn">
+        <img src='../assets/bx-font-size.svg'>    
+      </button>
+      <button class="bottom-menu-btn change-mode-btn">
+        <img src='../assets/bxs-moon.svg'>
+      </button>
+    </div>
   `;
     noteBox.innerHTML = content;
     document.querySelector(".note-section").appendChild(noteBox);
@@ -176,7 +173,6 @@ initEnterPin();
 initCheckPin();
 initClearPin();
 initCreateNote();
-
 renderNote();
 showNoteSettings();
 hideCreateNoteBox();
