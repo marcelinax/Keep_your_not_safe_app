@@ -149,13 +149,15 @@ const changePasscode = () => {
   const message = document.getElementById("create-note-box-title");
   const reg = new RegExp("^[0-9]$");
 
-  reg.test(newPasscode)
-    ? savePinInLocalStorage(newPasscode)
-    : (message.innerHTML = "Passcode can only contains numbers!");
+  if (!reg.test(newPasscode)) {
+    message.innerHTML = "Passcode can only contains numbers!";
+    return;
+  } else savePinInLocalStorage(newPasscode);
 
-  newPasscode.length < 4
-    ? (message.innerHTML = "Passcode is too short!")
-    : savePinInLocalStorage(newPasscode);
+  if (newPasscode.length < 4) {
+    message.innerHTML = "Passcode is too short!";
+    return;
+  } else savePinInLocalStorage(newPasscode);
 };
 
 const initChangePasscode = () => {
@@ -177,6 +179,18 @@ const initDeleteNote = () => {
   });
 };
 
+const editNote = () => {
+  const bodyNote = getElementById("body-note").value;
+  const note = JSON.parse(localStorage.getItem("note"));
+  note.content = bodyNote;
+  saveNoteInLocalStorage(note);
+};
+const initEditNote = () => {
+  document.getElementById("body-note").addEventListener("keyup", () => {
+    editNote();
+  });
+};
+
 if (!initChangePasscode) savePinInLocalStorage("1111");
 initEnterPin();
 initCheckPin();
@@ -188,3 +202,4 @@ hideCreateNoteBox();
 showChangePasscodeBox();
 initChangePasscode();
 initDeleteNote();
+initEditNote();
