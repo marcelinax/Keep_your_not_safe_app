@@ -12,8 +12,8 @@
   &--active {
     @include flex-center;
     @include section-size;
+    @include flex-column;
     position: relative;
-    flex-direction: column;
     opacity: 1;
   }
 
@@ -22,7 +22,7 @@
     &--active {
       @include flex-center;
       @include default-box-shadow;
-      flex-direction: column;
+      @include flex-column;
       width: 300px;
       height: calc(100px + 32px);
       position: absolute;
@@ -43,16 +43,17 @@
     }
     button {
       @include flex-center;
+      @include default-btn;
+      @include rounded-btn;
       width: 30px;
       height: 30px;
-      outline: none;
-      background-color: transparent;
-      border-radius: 50%;
-      border: 1px solid #e6e6e6;
-      cursor: pointer;
+      transition: $default-transition;
       img {
         width: 20px;
         height: 20px;
+      }
+      &:hover {
+        @include default-btn-hover;
       }
     }
   }
@@ -63,52 +64,13 @@
     left: 0;
     width: 80px;
     height: 100vh;
-
     border-right: 1px solid #e6e6e6;
     button {
       @include flex-center;
-      border: 1px solid #e6e6e6;
-      outline: none;
-      border-radius: 50%;
-      background-color: transparent;
+      @include default-btn;
+      @include rounded-btn;
       width: 40px;
       height: 40px;
-      cursor: pointer;
-    }
-    img {
-      filter: invert(1);
-      width: 22px;
-      height: 22px;
-    }
-  }
-  .create-note-box {
-    @include default-box-shadow;
-    @include default-box-size;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    border-radius: $default-border-radius;
-    padding: 3rem;
-    textarea {
-      margin: 2rem 0;
-      width: 100%;
-      height: calc(100% - 8rem);
-      outline: none;
-      border: 0.5px solid #e6e6e6;
-      resize: none;
-      padding: 1rem;
-      border-radius: $default-border-radius;
-    }
-    button {
-      @include flex-center;
-      border: 1px solid #e6e6e6;
-      outline: none;
-      border-radius: 50%;
-      background-color: transparent;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
       transition: $default-transition;
       img {
         filter: invert(1);
@@ -116,16 +78,49 @@
         height: 22px;
       }
       &:hover {
-        transform: translateY(-5px);
+        @include default-btn-hover;
+      }
+    }
+  }
+  .create-note-box {
+    @include default-box-shadow;
+    @include default-box-size;
+    @include flex-column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: $default-border-radius;
+    padding: 3rem;
+    textarea {
+      @include default-textarea;
+      margin: 2rem 0;
+      width: 100%;
+      height: calc(100% - 8rem);
+      border: 0.5px solid #e6e6e6;
+      padding: 1rem;
+      border-radius: $default-border-radius;
+    }
+    button {
+      @include flex-center;
+      @include default-btn;
+      @include rounded-btn;
+      width: 40px;
+      height: 40px;
+      transition: $default-transition;
+      img {
+        filter: invert(1);
+        width: 22px;
+        height: 22px;
+      }
+      &:hover {
+        @include default-btn-hover;
       }
     }
   }
   .note-box {
     @include default-box-size;
     @include default-box-shadow;
+    @include flex-column;
     border-radius: $default-border-radius;
-    display: flex;
-    flex-direction: column;
     background-color: white;
     padding: 2rem;
     position: relative;
@@ -139,23 +134,19 @@
       }
       .settings-btn {
         @include image-bg;
+        @include default-btn;
         background-image: url("../assets/sliders-h-solid.svg");
-        outline: none;
-        border: none;
-        background-color: transparent;
         width: 15px;
         height: 15px;
         margin-right: 1rem;
-        cursor: pointer;
         filter: invert(1);
       }
     }
     .body-note {
       height: 100%;
       textarea {
-        outline: none;
+        @include default-textarea;
         border: none;
-        resize: none;
         width: 100%;
         background-color: transparent;
         font-size: 12px;
@@ -169,7 +160,7 @@
         @include flex-center;
         justify-content: space-between;
         width: calc(100% - 4rem);
-        height: 100px;
+        height: 80px;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -179,17 +170,19 @@
       &-btn {
         @include image-bg;
         @include flex-center;
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        outline: none;
+        @include default-btn;
+        @include rounded-btn;
+        width: 45px;
+        height: 45px;
         border: 2px solid #e6e6e6;
-        border-radius: 50%;
-        cursor: pointer;
+        transition: $default-transition;
         img {
           filter: invert(1);
           width: 18px;
           height: 18px;
+        }
+        &:hover {
+          @include default-btn-hover;
         }
       }
     }
@@ -208,7 +201,7 @@
     @include dark-box-shadow;
     @include default-box-size;
     @include flex-center;
-    flex-direction: column;
+    @include flex-column;
     padding: 4rem 2rem;
     background-color: #2f333d;
     h5 {
@@ -248,22 +241,19 @@
     }
     .btns-box {
       @include flex-center;
-      flex-direction: column;
+      @include flex-column;
       .row {
         @include flex-center;
         width: 100%;
         margin-bottom: 1rem;
         button {
           @include flex-center;
+          @include default-btn;
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          background-color: transparent;
-          outline: none;
-          border: none;
           margin-right: 3rem;
           color: #868990;
-
           font-size: 30px;
           img {
             height: 25px;

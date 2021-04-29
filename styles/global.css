@@ -23,11 +23,12 @@
           align-items: center;
   width: 100%;
   height: 100vh;
-  position: relative;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
   opacity: 1;
 }
 
@@ -47,6 +48,7 @@
           align-items: center;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -82,18 +84,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 30px;
-  height: 30px;
   outline: none;
+  cursor: pointer;
   background-color: transparent;
+  border: none;
   border-radius: 50%;
   border: 1px solid #e6e6e6;
-  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
 .note-section .change-passcode-box button img {
   width: 20px;
   height: 20px;
+}
+
+.note-section .change-passcode-box button:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .note-section .menu {
@@ -124,20 +134,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #e6e6e6;
   outline: none;
-  border-radius: 50%;
+  cursor: pointer;
   background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
   width: 40px;
   height: 40px;
-  cursor: pointer;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
-.note-section .menu img {
+.note-section .menu button img {
   -webkit-filter: invert(1);
           filter: invert(1);
   width: 22px;
   height: 22px;
+}
+
+.note-section .menu button:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .note-section .create-note-box {
@@ -148,27 +166,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   border-radius: 4px;
   padding: 3rem;
 }
 
 .note-section .create-note-box textarea {
+  outline: none;
+  resize: none;
   margin: 2rem 0;
   width: 100%;
   height: calc(100% - 8rem);
-  outline: none;
   border: 0.5px solid #e6e6e6;
-  resize: none;
   padding: 1rem;
   border-radius: 4px;
 }
@@ -183,13 +201,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #e6e6e6;
   outline: none;
-  border-radius: 50%;
+  cursor: pointer;
   background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
   width: 40px;
   height: 40px;
-  cursor: pointer;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
@@ -211,7 +230,6 @@
   height: 500px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,6 +237,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 4px;
   background-color: white;
   padding: 2rem;
   position: relative;
@@ -243,14 +262,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("../assets/sliders-h-solid.svg");
   outline: none;
-  border: none;
+  cursor: pointer;
   background-color: transparent;
+  border: none;
+  background-image: url("../assets/sliders-h-solid.svg");
   width: 15px;
   height: 15px;
   margin-right: 1rem;
-  cursor: pointer;
   -webkit-filter: invert(1);
           filter: invert(1);
 }
@@ -261,8 +280,8 @@
 
 .note-section .note-box .body-note textarea {
   outline: none;
-  border: none;
   resize: none;
+  border: none;
   width: 100%;
   background-color: transparent;
   font-size: 12px;
@@ -288,7 +307,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: calc(100% - 4rem);
-  height: 100px;
+  height: 80px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -310,13 +329,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: white;
   outline: none;
-  border: 2px solid #e6e6e6;
-  border-radius: 50%;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #e6e6e6;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
 .note-section .note-box .bottom-menu-btn img {
@@ -324,6 +347,11 @@
           filter: invert(1);
   width: 18px;
   height: 18px;
+}
+
+.note-section .note-box .bottom-menu-btn:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .pin-pad-section {
@@ -359,6 +387,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -428,6 +457,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -458,12 +488,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: transparent;
-  outline: none;
-  border: none;
   margin-right: 3rem;
   color: #868990;
   font-size: 30px;

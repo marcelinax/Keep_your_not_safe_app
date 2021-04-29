@@ -27,3 +27,24 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+@mixin rounded-btn {
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+}
+@mixin default-btn {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+@mixin default-textarea {
+  outline: none;
+  resize: none;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin default-btn-hover {
+  transform: translateY(-5px);
+}
