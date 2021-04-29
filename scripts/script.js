@@ -180,7 +180,7 @@ const initDeleteNote = () => {
 };
 
 const editNote = () => {
-  const bodyNote = getElementById("body-note").value;
+  const bodyNote = document.getElementById("body-note").value;
   const note = JSON.parse(localStorage.getItem("note"));
   note.content = bodyNote;
   saveNoteInLocalStorage(note);
