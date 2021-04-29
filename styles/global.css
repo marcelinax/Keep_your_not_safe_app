@@ -5,12 +5,285 @@
   font-family: "Poppins", sans-serif;
 }
 
-section {
+.note-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100vh;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.note-section .change-passcode-box {
+  display: none;
+}
+
+.note-section .change-passcode-box--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  height: calc(100px + 32px);
+  position: absolute;
+  top: 0;
+  left: 42%;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  border-radius: 4px;
+}
+
+.note-section .change-passcode-box h5 {
+  font-weight: 500;
+}
+
+.note-section .change-passcode-box input {
+  margin: 1rem 0;
+  outline: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.note-section .change-passcode-box button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+
+.note-section .change-passcode-box button img {
+  width: 20px;
+  height: 20px;
+}
+
+.note-section .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  border-right: 1px solid #e6e6e6;
+}
+
+.note-section .menu button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.note-section .menu img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 22px;
+  height: 22px;
+}
+
+.note-section .create-note-box {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(400px - 6rem);
+  height: calc(400px - 6rem);
+  padding: 3rem;
+}
+
+.note-section .create-note-box input {
+  width: 100%;
+  height: 200px;
+  outline: none;
+  border: 0.5px solid black;
+}
+
+.note-section .note-box {
+  width: 300px;
+  height: 500px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  padding: 2rem;
+  position: relative;
+}
+
+.note-section .note-box .top-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.note-section .note-box .top-menu h6 {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.note-section .note-box .top-menu .settings-btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/sliders-h-solid.svg");
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  margin-right: 1rem;
+  cursor: pointer;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.note-section .note-box .body-note {
+  height: 100%;
+}
+
+.note-section .note-box .body-note textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  width: 100%;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.note-section .note-box .bottom-menu {
+  display: none;
+}
+
+.note-section .note-box .bottom-menu--active {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 4rem);
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 2rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.note-section .note-box .bottom-menu-btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  outline: none;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.note-section .note-box .bottom-menu-btn img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 18px;
+  height: 18px;
 }
 
 .pin-pad-section {
+  width: 100%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +294,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   background-color: #343843;
+  display: none;
 }
 
 .pin-pad-section .pin-pad-box {

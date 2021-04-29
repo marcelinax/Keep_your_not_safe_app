@@ -10,10 +10,25 @@
   </head>
   <body>
     <main>
-      <!-- <button id="create-btn">create</button>
-      <button id="edit-btn">edit</button>
-      <textarea id="note-body"></textarea>
-      <section class="note-section"> </section> -->
+      <section class="note-section">
+        <div class="change-passcode-box">
+          <h5>Change your passcode</h5>
+          <input type="text" id="change-passcode-input" maxlength="4" />
+          <button class="accept-change-passcode-btn">
+            <img src="assets/check-solid.svg" alt="" />
+          </button>
+        </div>
+        <div class="menu">
+          <button class="change-passcode-btn">
+            <img src="assets/bxs-key.svg" alt="" />
+          </button>
+        </div>
+        <div class="create-note-box">
+          <h4>Create your note</h4>
+          <input id="note-body" placeholder="Your note..." />
+          <button id="create-btn">create</button>
+        </div>
+      </section>
       <section class="pin-pad-section">
         <div class="pin-pad-box">
           <h5 id="pin-pad-title">Enter your passcode</h5>

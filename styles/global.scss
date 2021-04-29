@@ -4,16 +4,178 @@
   @include default-margin-padding;
   font-family: "Poppins", sans-serif;
 }
-section {
+
+.note-section {
+  // display: none;
+  @include flex-center;
   @include section-size;
+  position: relative;
+  flex-direction: column;
+  .change-passcode-box {
+    display: none;
+    &--active {
+      @include flex-center;
+      @include default-box-shadow;
+      flex-direction: column;
+      width: 300px;
+      height: calc(100px + 32px);
+      position: absolute;
+      top: 0;
+      left: 42%;
+      transition: $default-transition;
+      border-radius: $default-border-radius;
+    }
+
+    h5 {
+      font-weight: 500;
+    }
+    input {
+      margin: 1rem 0;
+      outline: none;
+      border: 1px solid #e6e6e6;
+      border-radius: $default-border-radius;
+    }
+    button {
+      @include flex-center;
+      width: 30px;
+      height: 30px;
+      outline: none;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid #e6e6e6;
+      cursor: pointer;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .menu {
+    @include flex-center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+
+    border-right: 1px solid #e6e6e6;
+    button {
+      @include flex-center;
+      border: 1px solid #e6e6e6;
+      outline: none;
+      border-radius: 50%;
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    img {
+      filter: invert(1);
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .create-note-box {
+    @include default-box-shadow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: calc(400px - 6rem);
+    height: calc(400px - 6rem);
+    padding: 3rem;
+    input {
+      width: 100%;
+      height: 200px;
+      outline: none;
+      border: 0.5px solid black;
+    }
+  }
+  .note-box {
+    @include default-box-size;
+    @include default-box-shadow;
+    border-radius: $default-border-radius;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 2rem;
+    position: relative;
+    .top-menu {
+      display: flex;
+      margin-bottom: 2rem;
+      align-items: center;
+      h6 {
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .settings-btn {
+        @include image-bg;
+        background-image: url("../assets/sliders-h-solid.svg");
+        outline: none;
+        border: none;
+        background-color: transparent;
+        width: 15px;
+        height: 15px;
+        margin-right: 1rem;
+        cursor: pointer;
+        filter: invert(1);
+      }
+    }
+    .body-note {
+      height: 100%;
+      textarea {
+        outline: none;
+        border: none;
+        resize: none;
+        width: 100%;
+        background-color: transparent;
+        font-size: 12px;
+      }
+    }
+    .bottom-menu {
+      display: none;
+
+      &--active {
+        @include default-box-shadow;
+        @include flex-center;
+        justify-content: space-between;
+        width: calc(100% - 4rem);
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 2rem;
+        transition: $default-transition;
+      }
+      &-btn {
+        @include image-bg;
+        @include flex-center;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        outline: none;
+        border: 2px solid #e6e6e6;
+        border-radius: 50%;
+        cursor: pointer;
+        img {
+          filter: invert(1);
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
 }
 
 .pin-pad-section {
+  @include section-size;
   @include flex-center;
   background-color: #343843;
+  display: none;
+
   .pin-pad-box {
     @include dark-box-shadow;
-    @include pin-pad-box-size;
+    @include default-box-size;
     @include flex-center;
     flex-direction: column;
     padding: 4rem 2rem;
